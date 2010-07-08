@@ -1,0 +1,20 @@
+<% content_for :cabecalho do %>
+  Listagem de Produtos
+<%end%>
+
+<%content_for :stylesheets %>
+<!--Conteudo da folha de estilo.-->
+<%end%>
+
+
+<% unless @produtos.blank?  %>
+
+<ul>
+  <%@produtos.each do |produto|%>
+    <li> <%= produto.nome %>  </li>
+  <%end%>
+</ul>
+
+<%else%>
+<p> Não há produtos no sistema. </p>
+<%end%>
