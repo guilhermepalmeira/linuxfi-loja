@@ -9,6 +9,12 @@
 
     <h1> Loja - <%= yield :cabecalho %> | Loja </h1>
 
+    <% unless flash.blank? %>
+      <% flash.each do |key,value| %>
+    <p class="flash_<%= key %>"> <%= value %> </p>
+      <%end%>
+    <%end%>
+
     <%= yield %> <!--Aqui é onde entra o conteudo da pagina-->
 
   </body>

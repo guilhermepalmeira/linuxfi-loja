@@ -7,4 +7,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  helper_method :pedido_atual#pra o metodo ficar disponivel pras views
+
+  protected
+
+  def pedido_atual
+    unless @pedido_atual
+      @pedido_atual = session[:pedido_id].blank? ? #Se ja tiver pedido na sessao do usuarios, da um find pra achar ele, se nao da um new nele, cira um novo
+        Pedido.new : Pedido.find(session[:pedido_id])
+    end
+    @pedido_atual
+  end
+
 end

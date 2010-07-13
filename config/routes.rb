@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|#web.xml do rails
   map.root :controller => 'produtos', :action => 'index'#define qdo vem uma requisicao pra /, tipo a pagina inicial da aplicação
 
   map.resources :produtos#sabe que la no produtos controller vc tem as operacoes basica implementadas desse controller(crud)
+  map.resources :itens #adiciona o itens controlle na rota
 
   map.connect ':controller/:action/'
   map.connect ':controller/:action.:format'
