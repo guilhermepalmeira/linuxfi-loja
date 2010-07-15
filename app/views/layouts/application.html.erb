@@ -2,7 +2,7 @@
   <head>
     <title>  <%= @titulo %> | Loja </title>
 
-    <%= yield :stylesheetes %>
+    <%= yield :stylesheets %>
 
   </head>
   <body>
@@ -11,11 +11,17 @@
 
     <% unless flash.blank? %>
       <% flash.each do |key,value| %>
-    <p class="flash_<%= key %>"> <%= value %> </p>
+        <p class="flash_<%= key %>"> <%= value %> </p>
       <%end%>
     <%end%>
 
-    <%= yield %> <!--Aqui é onde entra o conteudo da pagina-->
+    <ul>
+      <li> <%= link_to 'Produtos', produtos_path %> </li>
+      <%unless pedido_atual.blank?%>
+        <li> <%= link_to( "Veja seu Carrinho", itens_path ) %> </li>
+        <%end%>
 
+        <%= yield %> <!--Aqui é onde entra o conteudo da pagina-->
+    </ul>
   </body>
 </html>
