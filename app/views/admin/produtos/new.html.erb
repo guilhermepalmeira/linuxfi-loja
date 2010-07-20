@@ -1,0 +1,22 @@
+<% admin_form_for_produto do |f| %>
+
+<%= f.error_messages %>
+
+<p>
+  Nome: <br/><!--quebra de linha o br/-->
+  <%= f.text_field  :nome%>
+</p>
+
+<p>
+  Preço: <br/>
+  <%= f.text_field :preco %>
+</p>
+
+<p>
+  Descrição: <br/>
+  <%= f.text_area :descricao %>
+</p>
+
+<p> <%= submit_tag "Enviar" %>  </p>
+
+<%end%>

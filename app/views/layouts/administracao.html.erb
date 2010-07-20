@@ -11,13 +11,7 @@
 
     <%= render_flash %><!--chamando o partial _flash-->
 
-    <ul>
-      <li> <%= link_to 'Produtos', produtos_path %> </li>
-      <%unless pedido_atual.blank?%>
-        <li> <%= link_to( "Veja seu Carrinho", itens_path ) %> </li>
-        <%end%>
-
         <%= yield %> <!--Aqui é onde entra o conteudo da pagina-->
-    </ul>r "compartilhadr r "compartilhados/flash""compartilhados/flash"os/flash"
+
   </body>
 </html>

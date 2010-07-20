@@ -1,0 +1,5 @@
+<% unless flash.blank? %><!--Serve pra mandar msgs pra usuario depois de um request-->
+      <% flash.each do |key,value| %>
+        <p class="flash_<%= key %>"> <%= value %> </p>
+      <%end%>
+    <%end%>
