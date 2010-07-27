@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   #este é o master
-  #este ainda é o master
+  #este ainda é o master...
 
   helper_method :pedido_atual#pra o metodo ficar disponivel pras views
 
