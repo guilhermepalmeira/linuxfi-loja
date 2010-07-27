@@ -11,4 +11,13 @@ module ApplicationHelper
     render "compartilhados/flash", :flash => flash
   end
 
+  def will_paginate( object, options = {} )#sobrescrevendo o metod, trocando os nomes do label
+    options.merge!({:previous_label => "Anterior", :next_label => "Próxima"})#a exclamacao eh pra dizer q o hash vai ser alterado, sem criar um novo
+    super(object, options)
+  end
+
+  def mensagem_de_paginacao(colecao)
+    content_tag :p, "Mostrando #{colecao.size} de #{colecao.total_entries}"
+  end
+
 end
