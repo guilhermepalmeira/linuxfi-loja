@@ -1,6 +1,7 @@
 class ItensController < ApplicationController
 
   #commit do master
+  #commit em usuarios
 
   def create
     @produto = Produto.find(params[:produto_id])#carrega o pedido
