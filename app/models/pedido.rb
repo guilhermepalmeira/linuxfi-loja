@@ -5,6 +5,7 @@ class Pedido < ActiveRecord::Base
   #vai atumaticamente criar no seu objeto um metodo "itens_attributes", criadno um array de hashs"
   #def itens_attributes=(array)
   after_save :remover_itens_zerados#gancho pra remover do carrinho qdo for zerado
+  belongs_to :usuario, :counter_cache => "pedidos_count"
 
   def adicionar_produto(produto, quantidade)
     if item = self.itens.detect { |i| i.produto == produto }
