@@ -5,13 +5,16 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  include AutenticacaoControllerHelper
+
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  filter_parameter_logging /senha/
 
   #este é o master
   #este ainda é o master...
 
-  helper_method :pedido_atual#pra o metodo ficar disponivel pras views
+  helper_method :pedido_atual, :usuario_atual, :logado?, :administrador?#pra o metodo ficar disponivel pras views
 
   protected
 
