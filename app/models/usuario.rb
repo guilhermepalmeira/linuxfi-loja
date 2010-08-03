@@ -1,4 +1,4 @@
-class Usuario < ActiveRecorde::Base
+class Usuario < ActiveRecord::Base
 
   has_many :pedidos
 
@@ -12,7 +12,11 @@ class Usuario < ActiveRecorde::Base
 
   attr_accessor :senha, :termos_e_condicoes
 
+  attr_protected :administrador, :senha_em_hash #diz q os atributos so podem ser atribuidos diretamente, so manualmente
+
   before_validation :hashear_senha
+
+  after_create :enviar_email
   
   def senha_necessaria?
     self.senha_em_hash.blank? || self.senha.blank?
@@ -50,6 +54,9 @@ class Usuario < ActiveRecorde::Base
     self.senha_em_hash = Usuario.hashear(self.senha, self.salt)
   end
 
+  def enviar_email
+    UsuarioMailer.deliver_cadastro(self)
+  end
   
 
 end
