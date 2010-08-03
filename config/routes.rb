@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|#web.xml do rails
 
   map.resources :produtos #sabe que la no produtos controller vc tem as operacoes basica implementadas desse controller(crud)
   map.resources :itens, :collection => { :atualizar_pedido => :post } #adiciona o itens controlle na rota
+  map.resource :sessao
+  map.resource :usuario
 
   map.namespace :admin do |admin|#mapeando o namespace pra usuario admin
     admin.resources :produtos

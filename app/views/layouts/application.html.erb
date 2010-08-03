@@ -11,12 +11,8 @@
 
     <%= render_flash %><!--chamando o partial _flash-->
 
-    <ul>
-      <li> <%= link_to 'Produtos', produtos_path %> </li>
-      <%unless pedido_atual.blank?%>
-        <li> <%= link_to( "Veja seu Carrinho", itens_path ) %> </li>
-      <%end%>
-    </ul>
+    <%= render "compartilhados/cabecalho" %>
+
     <%= yield %> <!--Aqui é onde entra o conteudo da pagina-->
 
   </body>
