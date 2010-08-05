@@ -18,13 +18,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def pedido_atual
-    unless @pedido_atual
-      @pedido_atual = session[:pedido_id].blank? ? #Se ja tiver pedido na sessao do usuarios, da um find pra achar ele, se nao da um new nele, cira um novo
-        Pedido.new : Pedido.find_by_id(session[:pedido_id])
-    end
-    @pedido_atual
-  end
+
 
   def load_page
     @page = params[:page] || 1
