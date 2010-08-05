@@ -28,6 +28,7 @@ class ItensController < ApplicationController
         flash[:aviso] = (mensagem)
         redirect_to itens_path
       end
+      format.js
     end
   end
  

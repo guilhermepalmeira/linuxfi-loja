@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>  <%= @titulo %> | Loja </title>
+    <title>  <%= yield :cabecalho %> | Loja </title>
 
-    <%= yield :stylesheets %>
+   <%= javascript_include_tag "jquery", "jquery-ui", "jquery-form", "jrails", "application" %>
 
   </head>
   <body>
