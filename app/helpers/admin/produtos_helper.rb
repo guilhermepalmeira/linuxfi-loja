@@ -8,7 +8,10 @@ module Admin::ProdutosHelper #no pode herdar de mais de uma classe dessa forma u
     end
     form_for( @produto,
       :url => opcoes.first,
-      :html => { :method => opcoes.last },
+      :html => { 
+        :method => opcoes.last,
+        :multipart => true #campo de arquivo no formulario, para enviar pro servidor
+               },
       &block
     )
   end

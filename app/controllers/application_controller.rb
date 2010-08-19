@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     if @per_page.to_i > 30 #se receber mais de q 30 itens por pagina
       @per_page = 30 #mostra so os 30 pra nao estourar o BD(nunca confie no usuario)
     end
-    @per_page = 1
+    @per_page = 10
   end
 
   def paginate(scope, options = {})
