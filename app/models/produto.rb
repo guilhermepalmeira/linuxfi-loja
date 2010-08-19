@@ -2,7 +2,8 @@
 class Produto < ActiveRecord::Base #o nome dessa classe no plural que vai ser a tabela do BD
 
   searchable do
-    text :nome, :descricao
+    text :nome, boost => 2.0
+    text :descricao
     float :preco
   end
 
