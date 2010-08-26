@@ -30,4 +30,4 @@ user 'deployer', 'staff'
 shared_path = "/home/deployer/shop/shared"
 pid "#{shared_path}/pids/unicorn.pid"
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
-stdout_path "#{shared_path}/home/deployer/loja/shared/log/unicorn.stdout.log"
+stdout_path "#{shared_path}/log/unicorn.stdout.log"
